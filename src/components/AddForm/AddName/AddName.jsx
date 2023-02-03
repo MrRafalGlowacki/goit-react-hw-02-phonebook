@@ -6,9 +6,12 @@ export class AddName extends Component {
     const { handleChange, name } = this.props;
     return (
       <>
-        <label htmlFor="name" className={css.name} >Name</label>
+        <label htmlFor="name" className={css.name}>
+          Name
+        </label>
         <input
           onChange={handleChange}
+          autoComplete="off"
           placeholder="Enter Name"
           type="text"
           name="name"

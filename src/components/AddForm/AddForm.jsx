@@ -12,7 +12,7 @@ export class AddForm extends Component {
         <h2 className={css.title}>Phonebook</h2>
         <form className={css.form} onSubmit={handleSubmit}>
           <AddName handleChange={handleChange} name={name} />
-          <AddPhone handleChange={handleChange} number={number}/>
+          <AddPhone handleChange={handleChange} number={number} />
           <button type="submit" className={css.button}>
             Add contact
           </button>

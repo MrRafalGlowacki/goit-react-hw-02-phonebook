@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import css from './AddName.module.css';
 
 export class AddName extends Component {
@@ -24,3 +25,8 @@ export class AddName extends Component {
     );
   }
 }
+
+AddName.propTypes = {
+  handleChange: PropTypes.func,
+  name: PropTypes.string,
+};

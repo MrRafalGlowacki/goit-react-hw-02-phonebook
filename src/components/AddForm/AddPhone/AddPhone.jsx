@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import css from './AddPhone.module.css';
 
 export class AddPhone extends Component {
@@ -24,3 +25,8 @@ export class AddPhone extends Component {
     );
   }
 }
+
+AddPhone.propTypes = {
+  handleChange: PropTypes.func,
+  number: PropTypes.string,
+};

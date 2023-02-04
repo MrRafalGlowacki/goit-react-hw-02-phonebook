@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import css from './AddForm.module.css';
 import { AddName } from './AddName/AddName';
 import { AddPhone } from './AddPhone/AddPhone';
 
 export class AddForm extends Component {
+  static defaultProps = {
+    name: '',
+    number: '',
+  };
   render() {
     const { handleChange, handleSubmit, name, number } = this.props;
 
@@ -21,3 +26,10 @@ export class AddForm extends Component {
     );
   }
 }
+
+AddForm.propTypes = {
+  handleChange: PropTypes.func,
+  handleSubmit: PropTypes.func,
+  name: PropTypes.string,
+  number: PropTypes.string,
+};

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import css from './ContactFilter.module.css';
 
 export class ContactFilter extends Component {
@@ -20,3 +21,7 @@ export class ContactFilter extends Component {
     );
   }
 }
+ContactFilter.propTypes = {
+  filter: PropTypes.string,
+  handleChange: PropTypes.func,
+};

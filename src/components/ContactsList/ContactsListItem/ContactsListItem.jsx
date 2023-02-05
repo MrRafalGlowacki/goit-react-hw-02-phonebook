@@ -4,7 +4,7 @@ import css from './ContactsListItem.module.css';
 
 export class ContactsListItem extends Component {
   render() {
-    const { contactList, filter, killIt } = this.props;
+    const { contactList, filter, removeContact } = this.props;
     const list = contactList
       .filter(contact =>
         contact.name.toLowerCase().includes(filter.toLowerCase())
@@ -17,7 +17,7 @@ export class ContactsListItem extends Component {
           <button
             type="button"
             className={css.button}
-            onClick={() => killIt(contact.id)}
+            onClick={() => removeContact(contact.id)}
           >
             X
           </button>
@@ -36,5 +36,5 @@ ContactsListItem.propTypes = {
     })
   ),
   filter: PropTypes.string,
-  killIt: PropTypes.func,
+  removeContact: PropTypes.func,
 };

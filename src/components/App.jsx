@@ -27,7 +27,7 @@ export class App extends Component {
     ],
     filter: '',
   };
-  itIsDeadToMe = id => {
+  removeContact = id => {
     const index = this.state.contacts.findIndex(contact => contact.id === id);
     const remainingContacts = this.state.contacts;
     remainingContacts.splice(index, 1);
@@ -68,7 +68,7 @@ export class App extends Component {
           contactList={this.state.contacts}
           filter={this.state.filter}
           handleChange={this.handleChange}
-          IDoNotWantToSeeItAnymore={this.itIsDeadToMe}
+          removeContact={this.removeContact}
         />
       </>
     );

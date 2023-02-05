@@ -6,7 +6,7 @@ import { ContactsListItem } from './ContactsListItem/ContactsListItem';
 
 export class ContactList extends Component {
   render() {
-    const { contactList, filter, handleChange, IDoNotWantToSeeItAnymore } =
+    const { contactList, filter, handleChange, removeContact } =
       this.props;
 
     return (
@@ -19,7 +19,7 @@ export class ContactList extends Component {
           <ContactsListItem
             contactList={contactList}
             filter={filter}
-            killIt={IDoNotWantToSeeItAnymore}
+            removeContact={removeContact}
           />
         )}
       </>
@@ -37,5 +37,5 @@ ContactList.propTypes = {
   ),
   filter: PropTypes.string,
   handleChange: PropTypes.func,
-  IDoNotWantToSeeItAnymore: PropTypes.func,
+  removeContact: PropTypes.func,
 };

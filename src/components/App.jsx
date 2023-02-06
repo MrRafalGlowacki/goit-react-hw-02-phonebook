@@ -27,10 +27,19 @@ export class App extends Component {
     ],
     filter: '',
   };
-  removeContact = id => {
-    const index = this.state.contacts.findIndex(contact => contact.id === id);
-    const remainingContacts = this.state.contacts;
-    remainingContacts.splice(index, 1);
+
+  //alternative version of method, to help remember
+  // handleRemoveContact = id => {
+  //   const index = this.state.contacts.findIndex(contact => contact.id === id);
+  //   const remainingContacts = [...this.state.contacts];
+  //   remainingContacts.splice(index, 1);
+  //   this.setState({ contacts: remainingContacts });
+  // };
+
+  handleRemoveContact = id => {
+    const remainingContacts = this.state.contacts.filter(
+      contact => contact.id !== id
+    );
     this.setState({ contacts: remainingContacts });
   };
   handleChange = event => {
@@ -68,7 +77,7 @@ export class App extends Component {
           contactList={this.state.contacts}
           filter={this.state.filter}
           handleChange={this.handleChange}
-          removeContact={this.removeContact}
+          removeContact={this.handleRemoveContact}
         />
       </>
     );
